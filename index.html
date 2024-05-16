@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Increasing SLAM Pose Accuracy by Ground-to-Satellite Image Registration">
-  <meta name="keywords" content="G2S-SLAM-Fusion">
+        content="Occupancy-SLAM: An Efficient and Robust Algorithm for Simultaneously Optimizing Robot Poses and Occupancy Map">
+  <meta name="keywords" content="Occupancy-SLAM">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Increasing SLAM Pose Accuracy by Ground-to-Satellite Image Registration" />
-  <meta property="og:description" content="Increasing SLAM Pose Accuracy by Ground-to-Satellite Image Registration" />
+  <meta property="og:title" content="Occupancy-SLAM: An Efficient and Robust Algorithm for Simultaneously Optimizing Robot Poses and Occupancy Map" />
+  <meta property="og:description" content="Occupancy-SLAM: An Efficient and Robust Algorithm for Simultaneously Optimizing Robot Poses and Occupancy Map" />
   <!-- <meta property="og:image" content="https://YanhaoZhang.github.io/megane/static/images/flowchart.pdf" /> -->
-  <title>Increasing SLAM Pose Accuracy by Ground-to-Satellite Image Registration</title>
+  <title>Occupancy-SLAM: An Efficient and Robust Algorithm for Simultaneously Optimizing Robot Poses and Occupancy Map</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T834G2HR2M"></script>
@@ -48,31 +48,19 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Increasing SLAM Pose Accuracy by Ground-to-Satellite Image Registration</h1>
+          <h1 class="title is-1 publication-title">Occupancy-SLAM: An Efficient and Robust Algorithm for Simultaneously Optimizing Robot Poses and Occupancy Map</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://sites.google.com/view/yanhaozhang/home">Yanhao Zhang</a>,</span>
+              <a href="https://wangyingyu.github.io">Yingyu Wang</a>,</span>
               <span class="author-block">
-                <a href="https://yujiaoshi.github.io/">Yujiao Shi</a>,</span>
+                <a href="https://yujiaoshi.github.io/">Liang Zhao</a>,</span>
             <span class="author-block">
-              <a href="https:/ShanWang-Shan.github.io">Shan Wang</a>,</span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=EUS0qnEAAAAJ&hl=en">Ankit Vora</a>,</span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=wPNd0xkAAAAJ&hl=en">Akhil Perincherry</a>,</span>
-              <span class="author-block">
-                <a href="https://sites.google.com/view/yongbochen/home">Yongbo Chen</a>,</span>
-            <span class="author-block">
-              <a href="http://users.cecs.anu.edu.au/~hongdong/">Hongdong Li</a>
+              <a href="https:/ShanWang-Shan.github.io">Shoudong Huang</a>,</span>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">University of Technology Sydney,</span>
-            <span class="author-block">ShanghaiTech University,</span>
-            <span class="author-block">Australian National University,</span>
-            <span class="author-block">CSIRO, </span>
-            <span class="author-block">Ford Motor Company</span>
+            <span class="author-block">University of Technology Sydney</span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -93,7 +81,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/YanhaoZhang/SLAM-G2S-Fusion.git"
+                <a href="https://github.com/WANGYINGYU/Occupancy-SLAM"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -142,7 +130,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
         <p>
-          We propose a framework that integrates a ground-to-satellite (G2S) cross-view registration method with visual SLAM for autonomous driving. Loop closure, which is crucial for reducing localization error, is not always available in autonomous driving. Conversely, G2S registration avoids error accumulation but lacks robustness. Our goal is to combine the advantages of both methods to achieve precise vision-based vehicle localization.
+          This paper considers the SLAM problem using 2D laser scans (and odometry). We propose an optimization based SLAM approach to optimize the robot trajectory and the occupancy map simultaneously. The key novelty is that the robot poses and the 2D occupancy map are optimized together, which is significantly different from existing occupancy mapping strategies where the robot poses need to be obtained first before the map can be estimated. In this formulation, the map is represented as a continuous occupancy map where each 2D point in the environment has a corresponding evidence value, and the state variables include all the robot poses and the occupancy values at the discrete grid cell nodes of the occupancy map. Based on this formulation, a multi-resolution optimization framework that uses occupancy maps with different resolutions in different stages is introduced. A variation of Gauss-Newton method is proposed to solve the optimization problem in different stages to obtain the optimized occupancy map and robot trajectory. The proposed algorithm is very efficient and can easily converge with initialization from either odometry inputs or scan matching, even when only limited key frame scans are used. Furthermore, we propose an occupancy submap joining method so that large-scale problems can be more effectively handled by integrating the submap joining method with the proposed Occupancy-SLAM. Evaluations using simulations and practical 2D laser datasets demonstrate that the proposed approach can robustly obtain more accurate robot trajectories and occupancy maps than the state-of-the-art techniques with comparable computational time.
         </p>
         </div>
         <!-- <div class="publication-video">
@@ -159,7 +147,7 @@
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
           <p>
-            Our approach is straightforward: after obtaining the trajectory through visual SLAM, we implement a two-stage process to select valid G2S results: a coarse check using spatial correlation bounds, followed by a fine check using visual odometry consistency. The validated G2S results are then fused with the visual odometry from SLAM by solving a scaled pose graph.
+            This paper considers the SLAM problem using 2D laser scans (and odometry). We propose an optimization based SLAM approach to optimize the robot trajectory and the occupancy map simultaneously. The key novelty is that the robot poses and the 2D occupancy map are optimized together, which is significantly different from existing occupancy mapping strategies where the robot poses need to be obtained first before the map can be estimated. In this formulation, the map is represented as a continuous occupancy map where each 2D point in the environment has a corresponding evidence value, and the state variables include all the robot poses and the occupancy values at the discrete grid cell nodes of the occupancy map. Based on this formulation, a multi-resolution optimization framework that uses occupancy maps with different resolutions in different stages is introduced. A variation of Gauss-Newton method is proposed to solve the optimization problem in different stages to obtain the optimized occupancy map and robot trajectory. The proposed algorithm is very efficient and can easily converge with initialization from either odometry inputs or scan matching, even when only limited key frame scans are used. Furthermore, we propose an occupancy submap joining method so that large-scale problems can be more effectively handled by integrating the submap joining method with the proposed Occupancy-SLAM. Evaluations using simulations and practical 2D laser datasets demonstrate that the proposed approach can robustly obtain more accurate robot trajectories and occupancy maps than the state-of-the-art techniques with comparable computational time.
           </p>
         </div>
         <div class="publication-video">
@@ -209,18 +197,18 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-      @article{zhang2024increasing,
-        title={Increasing SLAM Pose Accuracy by Ground-to-Satellite Image Registration},
-        author={Zhang, Yanhao and Shi, Yujiao and Wang, Shan and Vora, Ankit and Perincherry, Akhil and Chen, Yongbo and Li, Hongdong},
-        journal={arXiv preprint arXiv:2404.09169},
-        year={2024}
-      }
+      @INPROCEEDINGS{Zhao-RSS-22, AUTHOR = {Liang Zhao AND Yingyu Wang AND Shoudong Huang}, 
+      TITLE = {{Occupancy-SLAM: Simultaneously Optimizing Robot Poses and Continuous Occupancy Map}}, 
+      BOOKTITLE = {Proceedings of Robotics: Science and Systems}, 
+      YEAR = {2022}, 
+      ADDRESS = {New York City, NY, USA}, 
+      MONTH = {June}, 
+      DOI = {10.15607/RSS.2022.XVIII.003} } https://www.roboticsproceedings.org/rss18/p003.pdf
     </code></pre>
     <div class="content has-text-justified">
       <p>
         Please do not hesitate to contact me at 
-        <a href="yanhaozhang1991@gmail.com">yanhaozhang1991@gmail.com</a>, or
-        <a href="yanhao.zhang@uts.edu.au">yanhao.zhang@uts.edu.au</a> 
+        <a href="yingyu.wang-1@student.uts.edu.au">yingyu.wang-1@student.uts.edu.au</a> 
         for any questions. 
       </p>
     </div>
