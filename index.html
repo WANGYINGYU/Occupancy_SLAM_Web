@@ -64,19 +64,19 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">ICRA 2024</span>
+            <span class="author-block">RSS 2022</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2404.09169"
+                <a href="https://www.roboticsproceedings.org/rss18/p003.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>Paper</span>
                 </a>
               </span>
               <!-- Code Link. -->
@@ -89,15 +89,6 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Poster Link. -->
-              <span class="link-block">
-                <a href="https://YanhaoZhang.github.io/G2S-SLAM-Webpage/static/images/ICRA2024_poster.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-alt"></i>
-                  </span>
-                  <span>Poster</span>
-                  </a>
               </span>
             </div>
 
@@ -110,7 +101,7 @@
 
 
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="visualization" autoplay muted loop playsinline height="100%">
@@ -119,7 +110,7 @@
       </video>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -149,11 +140,13 @@
           <p>
             This paper considers the SLAM problem using 2D laser scans (and odometry). We propose an optimization based SLAM approach to optimize the robot trajectory and the occupancy map simultaneously. The key novelty is that the robot poses and the 2D occupancy map are optimized together, which is significantly different from existing occupancy mapping strategies where the robot poses need to be obtained first before the map can be estimated. In this formulation, the map is represented as a continuous occupancy map where each 2D point in the environment has a corresponding evidence value, and the state variables include all the robot poses and the occupancy values at the discrete grid cell nodes of the occupancy map. Based on this formulation, a multi-resolution optimization framework that uses occupancy maps with different resolutions in different stages is introduced. A variation of Gauss-Newton method is proposed to solve the optimization problem in different stages to obtain the optimized occupancy map and robot trajectory. The proposed algorithm is very efficient and can easily converge with initialization from either odometry inputs or scan matching, even when only limited key frame scans are used. Furthermore, we propose an occupancy submap joining method so that large-scale problems can be more effectively handled by integrating the submap joining method with the proposed Occupancy-SLAM. Evaluations using simulations and practical 2D laser datasets demonstrate that the proposed approach can robustly obtain more accurate robot trajectories and occupancy maps than the state-of-the-art techniques with comparable computational time.
           </p>
-        </div>
+
+       <!--  </div>
         <div class="publication-video">
           <img src="./static/images/flowchart.jpg" alt="Teaser" style="width:100%;">
         </div>
-      </div>
+      </div> -->
+      
     </div>
     <!--/ Abstract. -->
 
@@ -173,7 +166,7 @@
     </div>
   </div> -->
 
-  <div class="columns is-centered has-text-centered">
+ <!--  <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
       <h2 class="title is-3">Trajectory</h2>
       <div class="content has-text-justified">
@@ -186,7 +179,7 @@
       </div>
     </div>
   </div>
-
+ -->
 
 
 
@@ -203,7 +196,7 @@
       YEAR = {2022}, 
       ADDRESS = {New York City, NY, USA}, 
       MONTH = {June}, 
-      DOI = {10.15607/RSS.2022.XVIII.003} } https://www.roboticsproceedings.org/rss18/p003.pdf
+      DOI = {10.15607/RSS.2022.XVIII.003} }, https://www.roboticsproceedings.org/rss18/p003.pdf
     </code></pre>
     <div class="content has-text-justified">
       <p>
@@ -226,8 +219,8 @@
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p> -->
           <p>
-            This website borrows the template from <a
-              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            <!-- This website borrows the template from <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. -->
           </p>
         </div>
       </div>
